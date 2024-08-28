@@ -1,0 +1,1 @@
+Dummy(3.14, Hello) Dummy(2.71, World) 
