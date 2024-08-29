@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 
-//na rotiso gpt gia constructors se templates typename T xoris vectors
 
 using namespace std;
 
