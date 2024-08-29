@@ -26,9 +26,15 @@ class UString {
 		UString(const string&);
 		UString();
 		void display();
+
+		string getString();
 };
 
 
+
+string UString::getString(){
+	return ustring;
+}
 
 
 UString* getRandomStrings(int& n, int& k){
@@ -46,9 +52,10 @@ UString* getRandomStrings(int& n, int& k){
 	return randStrings;
 }
 
-void printCollection(UString* collection, int n){
+void printCollection(ostream& os,UString* collection, int n){
 	for( int i=0; i<n; ++i){
-		collection[i].display();
+		os<<collection[i].getString()<<endl;
+
 	}
 
 
@@ -65,7 +72,7 @@ int main () {
 
 	UString* randomStrings = getRandomStrings(N, K);
 
-	printCollection(randomStrings, N);
+	printCollection(cout,randomStrings, N);
 
 	delete[] randomStrings;
 
