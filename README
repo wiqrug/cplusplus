@@ -1,0 +1,26 @@
+# C++ Practice Problems
+
+This repository contains my practice problems for my semester exams in C++. Each file represents my attempts to solve different C++ problems.
+
+## File Naming Conventions
+
+- **`a1.cpp`, `a2.cpp`, `a3.cpp`, etc.**: These files represent my first attempt at solving a specific problem.
+- **`aa1.cpp`, `aa2.cpp`, `aa3.cpp`, etc.**: These files represent my second attempt at solving the same problem.
+
+## Structure
+
+The repository is organized with files that follow a consistent naming convention to track my progress through multiple attempts at each problem. 
+
+## Purpose
+
+The purpose of this repository is to document my learning process and improvements as I practice and prepare for my C++ exams. Each file demonstrates a different approach or refinement of my solution.
+
+## Usage
+
+Feel free to explore the files to see the different strategies I've employed to solve these problems. You can compile and run any of the `.cpp` files using a C++ compiler like `g++`.
+
+Example:
+
+```bash
+g++ a1.cpp -o a1
+./a1
