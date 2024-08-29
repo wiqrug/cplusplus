@@ -1,0 +1,3 @@
+a-1 ->	overloading operator + should return a new object, not the current object using *this
+
+a-2 ->	be careful with file handling. Also, stob(x) --> bool xBool = stob(x); 
