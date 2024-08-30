@@ -44,8 +44,8 @@ FileHandler::FileHandler(const string& fname):filename(fname){}
 
 
 void FileHandler::copyFile(const string& dest)const{
-	ofstream ofs(filename);
-	ifstream ifs(dest);
+	ofstream ofs(dest);
+	ifstream ifs(filename);
 	if (ofs.is_open()&&ifs.is_open()){
 		string text;
 		while(getline(ifs,text)){
@@ -71,8 +71,11 @@ void FileHandler::copyInverted(const string& dest)const{
 
 
 int main () {
+FileHandler f1("temp.txt");
 
+f1.copyFile("pemp.txt");
 
+f1.copyInverted("lemp.txt");
 
 return 0;
 }
