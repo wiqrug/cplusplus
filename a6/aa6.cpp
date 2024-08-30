@@ -32,11 +32,6 @@ class Person{
 };
 
 
-Person::Person(const string& n,const int& a):name(n),age(a){}
-Person::Person():name(""),age(0){}
-Person::~Person()=default;
-
-
 
 class Student:public Person{
 	private:
@@ -45,9 +40,6 @@ class Student:public Person{
 		Student(const string&,const int&,const int&);
 		bool isStudent()const override;
 };
-
-Student::Student(const string& n,const int& a,const int& s):Person(n,a),semester(s){}
-bool Student::isStudent()const{return true;}
 
 
 class Professor:public Person{
@@ -58,8 +50,6 @@ class Professor:public Person{
 		bool isStudent() const override;
 };
 
-Professor::Professor(const string& n,const int& a,const bool& i):Person(n,a),hasPHD(i){}
-bool Professor::isStudent()const {return false;}
 
 
 
@@ -79,3 +69,13 @@ cout<<p->isStudent()<<endl;
 
 return 0;
 }
+Person::Person(const string& n,const int& a):name(n),age(a){}
+Person::Person():name(""),age(0){}
+Person::~Person()=default;
+
+
+Student::Student(const string& n,const int& a,const int& s):Person(n,a),semester(s){}
+bool Student::isStudent()const{return true;}
+
+Professor::Professor(const string& n,const int& a,const bool& i):Person(n,a),hasPHD(i){}
+bool Professor::isStudent()const {return false;}

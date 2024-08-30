@@ -29,7 +29,7 @@ class Queue{
 		void push(const T&);
 		void pop();
 		int getSize()const;
-		bool operator==(const Queue&);
+		bool operator==(const Queue&)const;
 
 };
 
@@ -149,7 +149,7 @@ int Queue<T>::getSize()const{return elements.size(); }
 
 
 template<typename T>
-bool Queue<T>::operator==(const Queue& q) {
+bool Queue<T>::operator==(const Queue& q)const {
 	return elements==q.elements;
 
 }

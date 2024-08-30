@@ -1,6 +1,0 @@
-a-1 ->	overloading operator + should return a new object, not the current object using *this
-
-a-2 ->	be careful with file handling. Also, stob(x) --> bool xBool = stob(x); 
-
-
-a-3 -> operator == SHOULD  be const especially if i use vector, i need to memorize some vector functions and also how to use strcmp()

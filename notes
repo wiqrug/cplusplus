@@ -1,0 +1,19 @@
+a-1 ->	overloading operator + should return a new object, not the current object using *this
+
+a-2 ->	be careful with file handling. Also, stob(x) --> bool xBool = stob(x); 
+
+a-3 -> operator == SHOULD  be const especially if i use vector, i need to memorize some vector functions and also how to use strcmp()
+
+a-4 -> should be more confident with the use of strcmp()
+
+
+a-5 -> again, overloading operator == should be const. i want to be  more confident using operator<< overload. also vector functions like being,end need practice
+       need to study the algorithm library
+
+a-6 -> this was easy, only be careful in order to use new Professor(,,,) i need to Person* p
+
+
+a-7 -> be careful with algorithm methods
+
+
+a-9 -> learn about seekg tellg etc. also binary files are crucial 
