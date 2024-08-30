@@ -1,0 +1,2 @@
+earth,the planet that we live in
+venus,a planet in our solar system
