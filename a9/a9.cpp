@@ -73,9 +73,9 @@ void FileHandler::copyInverted(const string& dest)const{
 int main () {
 FileHandler f1("temp.txt");
 
-f1.copyFile("pemp.txt");
+f1.copyFile("copyTemp.txt");
 
-f1.copyInverted("lemp.txt");
+f1.copyInverted("invertedCopyTemp.txt");
 
 return 0;
 }
