@@ -19,7 +19,7 @@ class Rectangle{
 		int* width;
 		int* length;
 	public:
-		Rectangle(int,int);
+		Rectangle(const int,const int);
 		~Rectangle();
 		Rectangle(const Rectangle&);
 		Rectangle& operator= (const Rectangle&);
@@ -60,7 +60,7 @@ return 0;}
 
 int Rectangle::getArea()const {return ((*width)*(*length));}
 
-Rectangle::Rectangle(int w,int l){
+Rectangle::Rectangle(const int w,const int l){
 	width = new int(w);
 	length = new int(l);
 }
