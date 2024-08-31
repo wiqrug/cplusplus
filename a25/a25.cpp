@@ -96,6 +96,6 @@ int main () {
 
 	file.getFileSize();
 
-	file.copyFile("klanila.txt");
+	file.copyFile("kla.txt");
 
 return 0;}
