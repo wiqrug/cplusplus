@@ -17,3 +17,19 @@ a-7 -> be careful with algorithm methods
 
 
 a-9 -> learn about seekg tellg etc. also binary files are crucial 
+
+a-19 -> be careful in the usage of pointers etc.
+
+
+
+
+* Note the differences between saveToBinaryFile and saveToFile
+
+
+
+solve a-12.
+
+
+
+
+open vim and type :Tutor

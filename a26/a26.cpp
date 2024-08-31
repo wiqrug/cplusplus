@@ -19,7 +19,10 @@ class Product{
 
 		Product(const Product&);
 		Product& operator=(const Product&);
+		bool operator>(const Product&);
 };
+
+
 
 
 vector<Product> readProductsFromFile(const string& filename){
@@ -91,7 +94,7 @@ Product& Product::operator=(const Product& other) {
 	password = new char[strlen(other.password)+1];
 	strcpy(password,other.password);
 
-	return *this;
+return *this;
 }
 
 
