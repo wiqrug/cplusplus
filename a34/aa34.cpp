@@ -69,9 +69,16 @@ l.push_back(new Fish("er",1));
 l.push_back(new Bird("er",1));
 
 
+
+
 cout<<l<<endl;
 
 
+
+for (auto& animal:l){
+	delete animal;
+
+}
 return 0;
 }
 
