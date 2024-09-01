@@ -1,111 +1,95 @@
 #include <iostream>
-#include <list>
 #include <string>
-
+#include <list>
 using namespace std;
+
 
 class Animal{
 	protected:
 		string name;
 	public:
+		Animal();
 		Animal(const string&);
 		virtual ~Animal();
-		virtual bool isFish()const =0;
-		virtual string getName() const =0;
-
+		virtual bool isFish() const=0;
+		virtual bool isBird() const=0;
+		virtual void display() const=0;
 };
 
 
-
-class Bird:public Animal{
-	protected:
-		bool hasLongWings;
-	public:
-		Bird(const string&,const bool&);
-		bool isFish() const override;
-		string getName() const override;
-
-};
-
-
-class Fish: public Animal {
+class Bird:public Animal {
 	private:
-		bool isTasty;
+		bool hasBigWings;
 	public:
-		Fish(const string&,const bool&);
+		Bird();
+		Bird(const string&, const bool&);
 		bool isFish() const override;
-		string getName() const override;
-
+		bool isBird() const override;
+		void display() const override;
 };
 
-ostream& operator << (ostream& os, const list<Animal*>& animals){
-	for (const auto& animal:animals){
-		if (animal->isFish()){
-			os<<animal->getName()<<endl;
-		}
-	}
-
-	return os;
-
+void Bird::display() const{
+	cout<<"Name: "<<name<<" Does it have big wings? "<< hasBigWings<<endl;
 }
 
 
 
+class Fish:public Animal{
+	private:
+		bool isTasty;
+	public:
+		Fish();
+		Fish(const string&,const bool&);
+		bool isFish() const override;
+		bool isBird() const override;
+		void display() const override;
+};
+
+void Fish::display() const {
+	cout<<"Name: "<<name<<endl<<"Is it tasty? "<<(isTasty?"yes":"no")<<endl;
+}
+
+
+ostream& operator<<(ostream& os, list<Animal*>& animals){
+	for (const auto& animal:animals){
+		if (animal->isFish()){
+			animal->display();
+		}
+	}
+return os;
+}
 
 
 
 int main () {
+list<Animal*> l;
 
-Bird* b1 = new Bird("petinos",false);
-
-Fish* f1 = new Fish("gavros",false);
-
-Fish* f2 = new Fish("lilik",true);
-
+l.push_back(new Bird("er",1));
+l.push_back(new Fish("er",1));
+l.push_back(new Bird("er",1));
 
 
+cout<<l<<endl;
 
 
-list<Animal*> f;
-f.push_back(f1);
-f.push_back(f2);
-
-cout<<f<<endl;
-for (auto& animal : f) {
-	delete animal;
-}
 return 0;
 }
 
+Fish::Fish(){}
+Fish::Fish(const string& n, const bool& i):Animal(n),isTasty(i){}
+
+bool Fish::isBird() const {return false;}
+bool Fish::isFish() const{return true;}
+
+
+Bird::Bird(){}
+Bird::Bird(const string& n, const bool& h):Animal(n),hasBigWings(h){}
+bool Bird::isFish() const {return false;}
+bool Bird::isBird() const{return true;}
 
 
 
-
-
-//Animal
-
-
-Animal::Animal(const string& n){
-	name=n;
-}
-
-
+Animal::Animal(){}
 Animal::~Animal()=default;
 
-
-//Fish
-Fish::Fish(const string& s, const bool& i):Animal(s),isTasty(i){};
-
-bool Fish::isFish() const {return true;}
-
-string Fish::getName() const{return name;}
-
-
-
-//Bird
-Bird::Bird(const string& s, const bool& h): Animal(s),hasLongWings(h){};
-
-bool Bird::isFish() const{return false;}
-
-string Bird::getName() const{return name;}
-
+Animal::Animal(const string& n):name(n){}
