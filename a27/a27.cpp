@@ -40,15 +40,16 @@ class RectangularSpace{
 		int cols;
 		void allocateSpace();
 		void deallocateSpace();
-
+	public:
 		RectangularSpace(const int&, const int&);
 		RectangularSpace(const RectangularSpace&);
 		RectangularSpace& operator=(const RectangularSpace&);
 		~RectangularSpace();
 		void addToCertainPosition(const int ,const int ,const T);
-		void replaceRows(const int r,const T*);
+		void replaceRows(const int ,const T*);
 
 };
+
 
 template<typename T>
 void RectangularSpace<T>::replaceRows(const int r, const T* newRow) {
@@ -64,7 +65,7 @@ void RectangularSpace<T>::replaceRows(const int r, const T* newRow) {
 
 template<typename T>
 void RectangularSpace<T>::addToCertainPosition(const int r, const int c, const T element){
-	if (r<=rows && r>=0 && c<=cols && c>=0)
+	if (r<rows && r>=0 && c<cols && c>=0)
 	{
 		data[r][c]=element;
 	}
@@ -95,6 +96,7 @@ RectangularSpace<T>::~RectangularSpace(){deallocateSpace();}
 
 template<typename T>
 RectangularSpace<T>::RectangularSpace(const RectangularSpace& other){
+	allocateSpace();
 	rows = other.rows;
 	cols = other.cols;
 	for (int i=0;i<rows;++i){
@@ -107,7 +109,9 @@ RectangularSpace<T>::RectangularSpace(const RectangularSpace& other){
 
 
 template<typename T>
-RectangularSpace<T>::RectangularSpace(const int& r, const int& c):rows(r),cols(c){}
+RectangularSpace<T>::RectangularSpace(const int& r, const int& c):rows(r),cols(c){
+	allocateSpace();
+}
 
 
 template<typename T>
@@ -130,4 +134,36 @@ void RectangularSpace<T>::allocateSpace(){
 
 
 
-int main () {return 0;};
+int main () {
+
+
+	RectangularSpace<int> matrix(3, 3); // 3x3 matrix
+	// Adding values
+	matrix.addToCertainPosition(0, 0, 1);
+	matrix.addToCertainPosition(0, 1, 2);
+	matrix.addToCertainPosition(0, 2, 3);
+
+	matrix.addToCertainPosition(1, 0, 4);
+	matrix.addToCertainPosition(1, 1, 5);
+	matrix.addToCertainPosition(1, 2, 6);
+
+	matrix.addToCertainPosition(2, 0, 7);
+	matrix.addToCertainPosition(2, 1, 8);
+	matrix.addToCertainPosition(2, 2, 9);
+
+	// Replacing a row
+	int newRow[3] = {10, 11, 12};
+	matrix.replaceRows(1, newRow);
+
+
+	// Copying the matrix
+	RectangularSpace<int> matrixCopy(matrix);
+
+	// Assigning one matrix to another
+	RectangularSpace<int> matrixAssigned(3, 3);
+	matrixAssigned = matrix;
+
+	return 0;
+};
+
+
