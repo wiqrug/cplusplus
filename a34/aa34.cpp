@@ -28,9 +28,6 @@ class Bird:public Animal {
 		void display() const override;
 };
 
-void Bird::display() const{
-	cout<<"Name: "<<name<<" Does it have big wings? "<< hasBigWings<<endl;
-}
 
 
 
@@ -44,10 +41,6 @@ class Fish:public Animal{
 		bool isBird() const override;
 		void display() const override;
 };
-
-void Fish::display() const {
-	cout<<"Name: "<<name<<endl<<"Is it tasty? "<<(isTasty?"yes":"no")<<endl;
-}
 
 
 ostream& operator<<(ostream& os, list<Animal*>& animals){
@@ -63,6 +56,7 @@ return os;
 
 int main () {
 list<Animal*> l;
+//Whenever i use new, i should delete!!!!!!!!!!!! dont forget this
 
 l.push_back(new Bird("er",1));
 l.push_back(new Fish("er",1));
@@ -81,6 +75,17 @@ for (auto& animal:l){
 }
 return 0;
 }
+
+
+
+void Bird::display() const{
+	cout<<"Name: "<<name<<" Does it have big wings? "<< hasBigWings<<endl;
+}
+
+void Fish::display() const {
+	cout<<"Name: "<<name<<endl<<"Is it tasty? "<<(isTasty?"yes":"no")<<endl;
+}
+
 
 Fish::Fish(){}
 Fish::Fish(const string& n, const bool& i):Animal(n),isTasty(i){}
