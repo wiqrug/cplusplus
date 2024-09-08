@@ -31,8 +31,15 @@ class Temp{
 		~Temp();
 		Temp& operator=(const Temp&);
 		void display() const;
+		const char* getCh()const;
+		double getNumber() const;
 
 };
+
+const char* Temp::getCh() const{return ch;}
+
+double Temp::getNumber() const{return number;}
+
 
 ostream& operator<<(ostream& os,const Temp&);
 
@@ -57,8 +64,8 @@ return 0;
 
 
 ostream& operator<<(ostream& os,const Temp& t){
-	t.display();
-
+	os<<t.getNumber()<<endl;
+	os<<t.getCh()<<endl;
 return os;
 }
 
@@ -74,12 +81,10 @@ void Temp::display() const{
 
 Temp& Temp::operator=(const Temp& other){
 	if (this==&other){return *this;}
-	else{
-		number=other.number;
-		delete[] ch;
-		ch = new char [strlen(other.ch)+1];
-		strcpy(ch,other.ch);
-	}
+	number=other.number;
+	delete[] ch;
+	ch = new char [strlen(other.ch)+1];
+	strcpy(ch,other.ch);
 
 return *this;
 }
