@@ -1,20 +1,10 @@
 A - 35			bigint2.
 
-A - 29			how to put ostream as a parameter to a function. otherwise use list and gg
-
 A - 37			How to write to a binary file, an how to check if a file already exists
 
 A - 9			How to use tellg and seekg, especially for binary files.
 
 A - 20			Study solution
-
-
-
-
-
-
-
-
 
 
 
@@ -27,3 +17,6 @@ A - 20			Study solution
 A6 DONE.
 
 A8 IM OK, I JUST NEED TO ENSURE HOW TO USE OPERATOR << OVELROAD. ALSO OPERATOR [] OVELROAD
+
+
+A37  i think im finally ok 
